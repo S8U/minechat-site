@@ -1,30 +1,25 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import "./globals.css";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const host = (await headers()).get("host") ?? "minechat-site.pages.dev";
-  const protocol = host.startsWith("localhost") || host.startsWith("127.0.0.1") ? "http" : "https";
-  const origin = new URL(`${protocol}://${host}`);
-  const socialImage = new URL("/og.png", origin).href;
+const siteUrl = "https://s8u.github.io/minechat-site/";
+const socialImage = `${siteUrl}og.png`;
 
-  return {
-    metadataBase: origin,
-    title: { default: "MineChat — Java chat, made for mobile", template: "%s — MineChat" },
-    description: "A lightweight Minecraft Java Edition client built around chat, designed natively for mobile.",
-    openGraph: {
-      title: "MineChat — Java chat, made for mobile",
-      description: "Your Minecraft Java server, in your pocket.",
-      url: origin,
-      siteName: "MineChat",
-      images: [{ url: socialImage, width: 1718, height: 910, alt: "MineChat app preview" }],
-      type: "website",
-    },
-    twitter: { card: "summary_large_image", title: "MineChat", description: "Java chat, made for mobile.", images: [socialImage] },
-  };
-}
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: { default: "MineChat — Java chat, made for mobile", template: "%s — MineChat" },
+  description: "A lightweight Minecraft Java Edition client built around chat, designed natively for mobile.",
+  openGraph: {
+    title: "MineChat — Java chat, made for mobile",
+    description: "Your Minecraft Java server, in your pocket.",
+    url: siteUrl,
+    siteName: "MineChat",
+    images: [{ url: socialImage, width: 1718, height: 910, alt: "MineChat app preview" }],
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "MineChat", description: "Java chat, made for mobile.", images: [socialImage] },
+};
 
 function Brand() {
   return <Link className="brand" href="/" aria-label="MineChat home"><span className="brand-mark"><i /><i /><i /></span><span>MineChat</span></Link>;
