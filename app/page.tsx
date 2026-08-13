@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteFrame from "./components/SiteFrame";
 
 const features = [
   {
@@ -38,12 +39,12 @@ const languages = [
 
 export default function Home() {
   return (
-    <>
+    <SiteFrame locale="en" alternateHref="/ko/">
       <section className="hero shell">
         <div className="hero-copy">
           <div className="eyebrow"><span className="status-dot" />In active development for iOS</div>
           <h1>Your server.<br /><span>In your pocket.</span></h1>
-          <p className="hero-lead">A lightweight Minecraft Java Edition client built around chat—designed to feel at home on your phone.</p>
+          <p className="hero-lead">An unofficial, lightweight Minecraft Java Edition client built around chat—designed to feel at home on your phone.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#features">Explore MineChat</a>
             <Link className="button button-secondary" href="/support">Get support</Link>
@@ -108,7 +109,7 @@ export default function Home() {
         <div className="shell trust-grid">
           <span>Microsoft account sign-in</span>
           <span>Direct server connection</span>
-          <span>No ads or analytics</span>
+          <span>15 supported languages</span>
         </div>
       </section>
 
@@ -149,7 +150,7 @@ export default function Home() {
             <ul className="check-list">
               <li><span>✓</span>No passwords collected by MineChat</li>
               <li><span>✓</span>No developer-operated account backend</li>
-              <li><span>✓</span>No advertising or behavioral analytics</li>
+              <li><span>✓</span>Authentication tokens secured in iOS Keychain</li>
             </ul>
             <Link className="text-link" href="/privacy">Read the privacy policy <span>→</span></Link>
           </div>
@@ -175,6 +176,6 @@ export default function Home() {
         </div>
         <Link className="button button-light" href="/support">Contact support</Link>
       </section>
-    </>
+    </SiteFrame>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFrame from "../components/SiteFrame";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -7,11 +8,12 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="content-page legal-page">
+    <SiteFrame locale="en" alternateHref="/ko/privacy">
+      <div className="content-page legal-page">
       <section className="page-hero shell legal-shell">
         <p className="eyebrow simple">Legal</p>
         <h1>Privacy Policy</h1>
-        <p className="effective-date">Effective August 13, 2026</p>
+        <p className="effective-date">Effective August 14, 2026</p>
         <p>MineChat is built to connect your device directly to the services and Minecraft Java Edition servers you choose. This policy explains what information is handled by the MineChat app and this website.</p>
       </section>
 
@@ -36,40 +38,47 @@ export default function PrivacyPage() {
 
         <section>
           <h2>3. Information collected by the developer</h2>
-          <p>MineChat does not currently operate a developer account backend and does not include advertising or behavioral analytics. The developer does not receive your Microsoft password or authentication tokens.</p>
+          <p>MineChat does not currently operate a developer account backend. The developer does not receive your Microsoft password or authentication tokens.</p>
           <p>If you contact support, the developer receives the email address and any information you voluntarily include in your message. Please do not send passwords, tokens, recovery codes, or other sensitive credentials.</p>
         </section>
 
         <section>
-          <h2>4. Website data</h2>
+          <h2>4. Advertising and analytics</h2>
+          <p>MineChat is in active development. The planned free release will include banner advertising and offer a one-time in-app purchase to remove ads. The current development build does not include an advertising SDK.</p>
+          <p>The advertising provider and whether analytics or personalized advertising will be used have not yet been selected. Before advertising is included in a distributed version, this policy and the applicable app store disclosures will be updated to identify the provider, data practices, purposes, user choices, and retention terms.</p>
+        </section>
+
+        <section>
+          <h2>5. Website data</h2>
           <p>This website does not intentionally use advertising cookies or behavioral analytics. The hosting provider may automatically process limited technical information, such as your IP address, browser type, request time, and requested pages, for delivery, reliability, abuse prevention, and security.</p>
         </section>
 
         <section>
-          <h2>5. Retention and deletion</h2>
+          <h2>6. Retention and deletion</h2>
           <p>Information stored locally by MineChat remains on your device until you remove the related account or server, reset the app, or delete the app. Support correspondence may be retained for as long as reasonably needed to resolve the request and maintain a record of the response. Third-party services and Minecraft server operators set their own retention periods.</p>
         </section>
 
         <section>
-          <h2>6. Sale and sharing</h2>
+          <h2>7. Sale and sharing</h2>
           <p>The developer does not sell your personal information. Information is shared only as needed for the connections you initiate, with the third-party services and Minecraft servers described above, or when required by law.</p>
         </section>
 
         <section>
-          <h2>7. Children and family accounts</h2>
+          <h2>8. Children and family accounts</h2>
           <p>Microsoft account age, consent, and family settings may affect access to Minecraft services. Parents and guardians should review Microsoft&apos;s family safety and privacy information and supervise a child&apos;s use of third-party Minecraft servers.</p>
         </section>
 
         <section>
-          <h2>8. Changes to this policy</h2>
+          <h2>9. Changes to this policy</h2>
           <p>This policy may be updated as MineChat changes. The effective date at the top of this page will be revised when material updates are made.</p>
         </section>
 
         <section>
-          <h2>9. Contact</h2>
+          <h2>10. Contact</h2>
           <p>For privacy questions or requests, email <a href="mailto:0uh1004@gmail.com">0uh1004@gmail.com</a>.</p>
         </section>
       </article>
-    </div>
+      </div>
+    </SiteFrame>
   );
 }

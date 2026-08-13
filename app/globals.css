@@ -32,6 +32,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-mark i:nth-child(3) { width: 3px; height: 3px; left: 9px; top: 16px; background: #2e6c49; }
 .site-header nav { display: flex; gap: 35px; font-size: 14px; color: #3e4942; font-weight: 560; }
 .site-header nav a:hover { color: var(--forest); }
+.header-tools { display: flex; align-items: center; gap: 9px; }
+.language-link { display: inline-flex; min-height: 35px; align-items: center; justify-content: center; padding: 0 12px; border: 1px solid #cdd9d0; border-radius: 999px; color: #455249; background: rgba(255,255,255,.5); font-size: 11px; font-weight: 680; }
+.language-link:hover { color: var(--forest); background: white; }
 .development-pill { display: inline-flex; align-items: center; gap: 8px; padding: 9px 13px; border: 1px solid #cdd9d0; border-radius: 999px; color: var(--forest); font-size: 12px; font-weight: 680; background: rgba(255,255,255,.5); }
 .development-pill i, .status-dot { width: 7px; height: 7px; background: #39a968; border-radius: 50%; box-shadow: 0 0 0 4px rgba(57,169,104,.12); }
 
@@ -169,7 +172,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 620px) {
   .shell, .narrow-shell, .legal-shell { width: min(100% - 32px, 1180px); }
-  .header-inner { height: 66px; }.development-pill { display: none; }
+  .header-inner { height: 66px; }.development-pill { display: none; }.language-link { min-height: 33px; }
   .hero { padding-top: 63px; padding-bottom: 45px; }.hero h1 { font-size: 51px; }.hero-lead { font-size: 16px; }.hero-actions { flex-direction: column; }.hero .button { width: 100%; }.phone-stage { height: 540px; transform: scale(.9); margin: -25px -20px; }.floating-card.latency { right: -7px; }.floating-card.privacy-chip { left: -6px; }
   .trust-grid { height: auto; grid-template-columns: 1fr; padding: 18px 0; gap: 15px; text-align: left; }.trust-grid span + span { border-left: 0; }
   .section { padding-top: 85px; padding-bottom: 90px; }.section-heading h2, .security-copy h2, .language-copy h2 { font-size: 42px; }.split-heading { gap: 25px; }.feature-grid { margin-top: 40px; }.feature-card { padding: 22px; }

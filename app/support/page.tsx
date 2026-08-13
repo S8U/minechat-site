@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFrame from "../components/SiteFrame";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -13,7 +14,8 @@ const topics = [
 
 export default function SupportPage() {
   return (
-    <div className="content-page">
+    <SiteFrame locale="en" alternateHref="/ko/support">
+      <div className="content-page">
       <section className="page-hero shell narrow-shell">
         <p className="eyebrow simple">Support</p>
         <h1>How can we help?</h1>
@@ -37,6 +39,7 @@ export default function SupportPage() {
           {topics.map((topic) => <article key={topic.title}><h3>{topic.title}</h3><p>{topic.body}</p></article>)}
         </div>
       </section>
-    </div>
+      </div>
+    </SiteFrame>
   );
 }
